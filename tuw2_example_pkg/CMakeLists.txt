@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(tuw2_examples_rclcpp_minimal_composition)
+project(tuw2_example_pkg)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -21,7 +21,7 @@ add_library(composition_nodes SHARED
             src/publisher_node.cpp
             src/subscriber_node.cpp)
 target_compile_definitions(composition_nodes
-  PRIVATE "MINIMAL_COMPOSITION_DLL")
+  PRIVATE "TUW2_EXAMPLE_PACKAGE_DLL")
 ament_target_dependencies(composition_nodes rclcpp rclcpp_components std_msgs)
 
 # This package installs libraries without exporting them.
@@ -67,8 +67,6 @@ if(BUILD_TESTING)
   target_link_libraries(pub_test composition_nodes)
   ament_target_dependencies(pub_test rclcpp rclcpp_components std_msgs)  # Gtest requires rclcpp to instantiate the Node
 
-  find_package(ament_cmake_copyright REQUIRED)
-  ament_copyright()
 endif()
 
 ament_package()

@@ -12,21 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <memory>
-#include "minimal_composition/publisher_node.hpp"
-#include "minimal_composition/subscriber_node.hpp"
-#include "rclcpp/rclcpp.hpp"
+#ifndef TUW2_EXAMPLE_PKG__SUBSCRIBER_NODE_HPP_
+#define TUW2_EXAMPLE_PKG__SUBSCRIBER_NODE_HPP_
 
-int main(int argc, char * argv[])
+#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/string.hpp"
+#include "tuw2_example_pkg/visibility.h"
+
+class SubscriberNode : public rclcpp::Node
 {
-  rclcpp::init(argc, argv);
-  rclcpp::executors::SingleThreadedExecutor exec;
-  rclcpp::NodeOptions options;
-  auto publisher_node = std::make_shared<PublisherNode>(options);
-  auto subscriber_node = std::make_shared<SubscriberNode>(options);
-  exec.add_node(publisher_node);
-  exec.add_node(subscriber_node);
-  exec.spin();
-  rclcpp::shutdown();
-  return 0;
-}
+public:
+  TUW2_EXAMPLE_PACKAGE_PUBLIC SubscriberNode(rclcpp::NodeOptions options);
+
+  int multiply(int a, int b)
+  {
+    return a * b;
+  }
+
+private:
+  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
+};
+
+#endif  // TUW2_EXAMPLE_PKG__SUBSCRIBER_NODE_HPP_

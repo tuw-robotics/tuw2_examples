@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MINIMAL_COMPOSITION__PUBLISHER_NODE_HPP_
-#define MINIMAL_COMPOSITION__PUBLISHER_NODE_HPP_
+#ifndef TUW2_EXAMPLE_PKG__PUBLISHER_NODE_HPP_
+#define TUW2_EXAMPLE_PKG__PUBLISHER_NODE_HPP_
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
-#include "minimal_composition/visibility.h"
+#include "tuw2_example_pkg/visibility.h"
 
 class PublisherNode : public rclcpp::Node
 {
 public:
-  MINIMAL_COMPOSITION_PUBLIC PublisherNode(rclcpp::NodeOptions options);
+  TUW2_EXAMPLE_PACKAGE_PUBLIC PublisherNode(rclcpp::NodeOptions options);
 
 private:
   void on_timer();
@@ -31,4 +31,4 @@ private:
   rclcpp::TimerBase::SharedPtr timer_;
 };
 
-#endif  // MINIMAL_COMPOSITION__PUBLISHER_NODE_HPP_
+#endif  // TUW2_EXAMPLE_PKG__PUBLISHER_NODE_HPP_

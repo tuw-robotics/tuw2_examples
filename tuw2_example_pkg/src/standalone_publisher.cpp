@@ -12,20 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MINIMAL_COMPOSITION__SUBSCRIBER_NODE_HPP_
-#define MINIMAL_COMPOSITION__SUBSCRIBER_NODE_HPP_
-
+#include <memory>
+#include "tuw2_example_pkg/publisher_node.hpp"
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
-#include "minimal_composition/visibility.h"
 
-class SubscriberNode : public rclcpp::Node
+int main(int argc, char * argv[])
 {
-public:
-  MINIMAL_COMPOSITION_PUBLIC SubscriberNode(rclcpp::NodeOptions options);
-  int multiply(int a, int b) {return a*b;}
-private:
-  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
-};
-
-#endif  // MINIMAL_COMPOSITION__SUBSCRIBER_NODE_HPP_
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<PublisherNode>(rclcpp::NodeOptions()));
+  rclcpp::shutdown();
+  return 0;
+}

@@ -27,7 +27,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 
-#include "minimal_composition/subscriber_node.hpp"
+#include "tuw2_example_pkg/subscriber_node.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 

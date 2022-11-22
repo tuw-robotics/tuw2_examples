@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
-  <name>tuw2_examples_rclcpp_minimal_composition</name>
+  <name>tuw2_example_pkg</name>
   <version>0.15.1</version>
   <description>Minimalist examples of composing nodes in the same
   process</description>
@@ -22,7 +22,6 @@
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-  <test_depend>ament_cmake_copyright</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

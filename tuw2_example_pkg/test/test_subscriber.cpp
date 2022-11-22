@@ -26,27 +26,22 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 #include <memory>
-#include "minimal_composition/subscriber_node.hpp"
+#include "gtest/gtest.h"
 #include "rclcpp/rclcpp.hpp"
-
-#include <gtest/gtest.h>
-#include <iostream>
-
-
+#include "tuw2_example_pkg/subscriber_node.hpp"
 
 TEST(SubsciberMultiply, TestIntegerOne_One)
 {
-    auto node = std::make_shared<SubscriberNode>(rclcpp::NodeOptions());
-    const auto expected = 12;
-    const auto actual = node->multiply(3,4);
-    ASSERT_EQ(expected, actual);
+  auto node = std::make_shared<SubscriberNode>(rclcpp::NodeOptions());
+  const auto expected = 12;
+  const auto actual = node->multiply(3, 4);
+  ASSERT_EQ(expected, actual);
 }
 
-int main(int argc, char** argv)
+int main(int argc, char ** argv)
 {
-    rclcpp::init(argc, argv);
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+  rclcpp::init(argc, argv);
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }

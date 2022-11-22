@@ -14,7 +14,7 @@
 
 #include <chrono>
 
-#include "minimal_composition/publisher_node.hpp"
+#include "tuw2_example_pkg/publisher_node.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 

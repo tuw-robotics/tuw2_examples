@@ -13,13 +13,13 @@
 // limitations under the License.
 
 #include <memory>
-#include "minimal_composition/publisher_node.hpp"
+#include "tuw2_example_pkg/subscriber_node.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<PublisherNode>(rclcpp::NodeOptions()));
+  rclcpp::spin(std::make_shared<SubscriberNode>(rclcpp::NodeOptions()));
   rclcpp::shutdown();
   return 0;
 }
