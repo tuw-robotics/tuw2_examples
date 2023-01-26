@@ -34,7 +34,7 @@
 TEST(SubsciberMultiply, TestIntegerOne_One)
 {
   auto node = std::make_shared<SubscriberNode>(rclcpp::NodeOptions());
-  const auto expected = 12;
+  const auto expected = 11;
   const auto actual = node->multiply(3, 4);
   ASSERT_EQ(expected, actual);
 }
